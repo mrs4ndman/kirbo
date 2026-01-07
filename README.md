@@ -1,5 +1,18 @@
-A Lush Theme for Neovim.
-===
+# Kirbo: my own spin on colorschemes
 
-See: http://git.io/lush.nvim for more information on Lush and a helper script
-to setup your repo clone.
+---
+
+## Installation:
+
+- `lazy.nvim`
+```lua
+return {
+    "mrs4ndman/kirbo",
+    enabled = true,
+    lazy = false,
+    config = function() 
+      vim.cmd("colorscheme kirbo")
+    end
+}
+```
+

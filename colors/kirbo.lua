@@ -1,21 +1,71 @@
--- You probably always want to set this in your vim file
-vim.opt.background = 'dark'
-vim.g.colors_name = 'kirbo'
+-- Normal highlights
+vim.api.nvim_set_hl(0, "Comment", { fg = "#00b300", italic = true })
 
--- By setting our module to nil, we clear lua's cache,
--- which means the require ahead will *always* occur.
---
--- This isn't strictly required but it can be a useful trick if you are
--- incrementally editing your config a lot and want to be sure your themes
--- changes are being picked up without restarting neovim.
---
--- Note if you're working in on your theme and have :Lushify'd the buffer,
--- your changes will be applied with our without the following line.
---
--- The performance impact of this call can be measured in the hundreds of
--- *nanoseconds* and such could be considered "production safe".
-package.loaded['lush_theme.kirbo'] = nil
+vim.api.nvim_set_hl(0, "Constant", { fg = "#cc0000", bold = true })
 
--- include our theme file and pass it to lush to apply
-require('lush')(require('lush_theme.kirbo'))
+vim.api.nvim_set_hl(0, "Function", {
+	fg = "#0aa0f0",
+	bold = true,
+	italic = true,
+})
 
+vim.api.nvim_set_hl(0, "Identifier", { fg = "#c03daa" })
+
+vim.api.nvim_set_hl(0, "Normal", { fg = "#baffba" })
+
+vim.api.nvim_set_hl(0, "Number", { link = "@variable" })
+
+vim.api.nvim_set_hl(0, "String", { fg = "#ebffb5" })
+
+vim.api.nvim_set_hl(0, "PreProc", {
+	fg = "#7dcfff",
+	bold = true,
+	italic = true,
+})
+
+-- Plugins: Telescope
+vim.api.nvim_set_hl(0, "TelescopeNormal", { link = "String"})
+vim.api.nvim_set_hl(0, "TelescopeTitle", { link = "Normal"})
+vim.api.nvim_set_hl(0, "TelescopeBorder", { link = "@keyword"})
+
+
+
+-- Diagnostic
+vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", {
+	fg = "#414868",
+	italic = true,
+})
+
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", {
+	underline = true,
+	fg = "#b23100",
+	bold = true,
+})
+
+vim.api.nvim_set_hl(0, "DiagnosticVirtualLinesError", {
+	fg = "#b23100",
+	bold = true,
+})
+vim.api.nvim_set_hl(0, "DiagnosticFloatingError", {
+	link = "DiagnosticVirtualLinesError",
+})
+
+-- Treesitter textobjects
+
+vim.api.nvim_set_hl(0, "@constant", { link = "@constant" })
+
+vim.api.nvim_set_hl(0, "@constant.builtin", { fg = "#dccc00", bold = true })
+
+vim.api.nvim_set_hl(0, "@keyword", { fg = "#9d7cd8", italic = true })
+
+vim.api.nvim_set_hl(0, "@keyword.function", { link = "@keyword" })
+
+vim.api.nvim_set_hl(0, "@punctuation.delimiter", { link = "Normal" })
+
+vim.api.nvim_set_hl(0, "@type", { fg = "#cc3ebf", bold = true })
+
+vim.api.nvim_set_hl(0, "@type.builtin", { fg = "#9a3fbf", bold = true })
+
+vim.api.nvim_set_hl(0, "@variable", { fg = "#cc6600", bold = true })
+
+vim.api.nvim_set_hl(0, "@variable.builtin", { fg = "#cc4400", bold = true })
