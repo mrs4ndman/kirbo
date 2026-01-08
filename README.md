@@ -17,6 +17,6 @@ return {
 ```
 
 ## Up-to-date look:
-<img width="2559" height="1329" alt="Theme image preview" src="https://github.com/user-attachments/assets/90c55b37-5b52-46cd-ad99-e71d53e9e8e8" />
+<img width="auto" height="auto" alt="Theme image preview" src="https://github.com/user-attachments/assets/90c55b37-5b52-46cd-ad99-e71d53e9e8e8" />
 
 
